@@ -1,4 +1,7 @@
-import ""
+# coding=utf-8
+import sys
+sys.path.append("../OJHandler")
+from ioHandler import *
 class Solution:
     def makeNext(self,pattern):
         """
@@ -30,32 +33,36 @@ class Solution:
         :rtype: int
         '''
         if(len(pattern)>len(target)):
-            return "target length is shorter than pattern length"
+            #return "target length is shorter than pattern length"
+            return "false"
         if(not len(target)):
-            return "target null"
+            #return "target null"
+            return "false"
         nextArr = self.makeNext(pattern)
         j=0
-        print nextArr
         for i in range(0,len(target)):
-            print i
             if(target[i] == pattern[j]):
                 j += 1
             else:
                 j=nextArr[j-1]
                 i -= 1
             if(j == len(nextArr)):
-                return (i,j)
-        return "not found"
+                #return (i,j-1)
+                return "true"
+        #return "not found"
+        return "false"
 
 obj = Solution()
+IoHandler.handler(obj, Solution.__dict__["KMP"], "huawei")
+#print 4564367
 #res = obj.KMP("asd","agctagcagctagctg")
 #res = obj.KMP("asd","df")
-
-res = obj.KMP("","")
-
-args = ioHandler.inputHandler()
+#res = obj.KMP()
 
 
-'''
+"""
 refer to: http://blog.csdn.net/yearn520/article/details/6729426
-'''
+"""
+"""
+尚未测试通过
+"""
