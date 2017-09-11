@@ -22,3 +22,4 @@
 
 ## Something important
 + 不要依赖IDE，学会肉眼调试
++ leetcodei新增的note、list、profile功能很好用，不再更新，leetcode主页https://leetcode.com/userlee/
